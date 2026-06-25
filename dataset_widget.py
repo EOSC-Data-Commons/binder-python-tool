@@ -19,7 +19,7 @@ def print_tree(path: Path, prefix: str = ""):
             print_tree(entry, prefix + extension)
 
 
-def create_widget():
+def datastaging_widget():
     out = widgets.Output()
     box = widgets.VBox([widgets.Label(value="⏳ Waiting for params...")])
     display(box, out)
