@@ -50,7 +50,7 @@ def create_widget():
                 print(f"Running: datahugger download {dataset_url} --to data/")
                 try:
                     result = subprocess.run(
-                        ["datahugger", "download", dataset_url, "--to", "data/"],
+                        ["./datahugger", "download", dataset_url, "--to", "data/"],
                         capture_output=True,
                         text=True
                     )
