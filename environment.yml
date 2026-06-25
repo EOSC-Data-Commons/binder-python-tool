@@ -1,6 +1,9 @@
 dependencies:
+  - python=3.12
   - matplotlib
   - numpy
   - pip
-  - notebook
+  - notebook<7
+  - pip:
+    - ipyparams>=0.2.1
   

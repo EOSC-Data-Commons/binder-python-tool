@@ -5,5 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "notebook>=7.6.0",
+    "ipyparams>=0.2.1",
+    "ipywidgets>=8.1.8",
+    "notebook<7",
 ]
