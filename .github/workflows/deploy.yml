@@ -1,0 +1,28 @@
+name: Deploy JupyterLite
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install JupyterLite
+        run: pip install jupyterlite-core jupyterlite-pyodide-kernel jupyter-server
+
+      - name: Build
+        run: jupyter lite build --contents python.ipynb --output-dir dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
